@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage[margin=2cm]{geometry}
+\begin{document}
+\textbf{D. Ideales en Dominios de Polinomios}
+\\
+\\
+Sea $F$ un campo y sea $J$ cualquier ideal de $F[x]$
+\\
+\\
+1. Sean $p(x)$ y $q(x)$ generadores de $J$. Es decir $p(x)$ es múltplo de $q(x)$ y viceversa. Esto es equivalente a decir:
+\begin{equation*}
+    p(x)=q(x)a(x) \quad q(x)=p(x)b(x)
+\end{equation*}
+Juntanto las ecuaciones llegamos a que $p(x)=p(x)a(x)b(x) \Longleftrightarrow a(x)b(x)=1 \Longleftrightarrow a(x) \text{ y } b(x) \text{ son constantes}$. Es decir $p(x)$ y $q(x)$ son asociados.
+\\
+\\
+2.
+\\
+$\Longleftarrow$) Trivial
+\\
+\\
+$\Longrightarrow$) Por definición $J$ consiste de todos los elementos de la forma $m(x)p(x)$ con $p(x)$ variable. Entonces $a(x)=m(x)p(x)$ si y solo si $m(x)\mid a(x)$
+\\
+\\
+3.
+\\
+$\Longrightarrow$) Supongamos que posee como generador $p(x)$ tal que $p(x)=a(x)b(x)$, entonces $a(x) \in J$ o $b(x) \in J$, entonces $a(x)$ es generador (sin pérdida de generalidad), si $a(x)$ es reducible volvemos a argumentar de la misma forma, este profeso es finito hasta llegar a un elemento irreducible en $F[x]$.
+\\
+\\
+$\Longleftarrow$) $J$ posee un generador irreducible, sease $p(x)$. Sea $a(x)b(x) \in J$, entonces $p(x)\mid a(x)b(x)$, o equivalentemente, $p(x) \mid a(x)$ o $p(x) \mid b(x)$. $J$ primo por definición.
+\\
+\\
+4. Supongamos que $(p(x)) \subset I$, donde $I$ es otro ideal, sea un $a(x) \in I-(p(x))$, por lo que $a(x) \neq p(x)q(x)$, es decir $a(x)$ y $p(x)$ son coprimos, entonces existe una combinación lineal tal que $1=r(x)a(x)+s(x)p(x)$, a su vez se tiene que $p(x) \in I$, por lo que $r(x)a(x)+s(x)p(x) \in I$ o que $1 \in I$. Pero entonces $I=F[x]$.
+\\
+\\
+5. $S=\{ p(x) \in F[x] \mid \sum_{i=0}^{n}a_{i}x^{}i \text{ tal que } \sum_{i=0}^{n}a_{i}=0\}$. Directamente $x-1 \in S$ y es un polinomio irreducible, por lo que $S=(x-1)$.
+\\
+\\
+6. Existe una biyección $\varphi: F[x]/(x-1) \to F$ ($x \rightsquigarrow 1$)
+\\
+\\
+\textbf{E. Demostración del Teorema de Factorización Única}
+\\
+\\
+1. Probar el Lema de Euclides para polinomios.
+\\
+\\
+Sea $p(x)$ irreducible tal que $p(x) \mid a(x)b(x)$. Si $p(x) \mid a(x)$ estamos listos. Entonces supogamos que no es el caso. Los únicos divisores comúnes de $p(x)$ y $a(x)$ son $\pm 1$. Sigue que
+\begin{equation*}
+    \gcd (p(x),a(x)) = 1
+\end{equation*}
+Esto es equivalente a:
+\begin{equation*}
+\begin{aligned}
+    &r(x)p(x)+s(x)a(x)=1 \\
+    &r(x)p(x)b(x)+s(x)a(x)b(x)=b(x)
+\end{aligned}
+\end{equation*}
+como $p(x) \mid a(x)b(x)$ hay $t(x)$ donde:
+\begin{equation*}
+    r(x)p(x)b(x)+s(x)t(x)p(x)=b(x)
+\end{equation*}
+Es decir $p(x)\left( r(x)b(x)+s(x)t(x) \right) = b(x)$. Sigue que $p(x) \mid b(x)$.
+\\
+\\
+2. Probar los dos corolarios del lema de Euclides.
+\\
+\\
+Cor1) Sean $m_{1}(x),\dots,m_{n}(x)$ polinomios y sea $p(x)$ un polinomio irreducible. Si $p(x) \mid (m_{1}(x)\dots m_{n}(x))$, entonces $p(x) \mid m_{i}(x)$ para algún $i \in \{1,\dots,n \}$
+\\
+\\
+Sea $m_{1}(x)\dots m_{n}(x)$ denotado como $m_{1}(x)(m_{2}\dots m_{n}(x))$, por el lema de Euclides para polinomios $p(x) \mid m_{1}(x)$ o $p(x) \mid (m_{2}(x)\dots m_{n}(x))$. En el primer caso estamos listos, sino argumentamos por el Lema de Euclides hasta $n$ veces si es necesario.
+\\
+\\
+Cor2) Sean $q_{1}(x),\dots,q_{n}(x)$ y $p(x)$ polinomios irreducibles. Si $p(x) \mid (q_{1}(x) \dots q_{n}(x))$, entonces $p(x)$ equivale uno de los $q_{i}(x)$ para algún $i \in \{ i,\dots,n\}$
+\\
+\\
+Por corolario anterior, se tiene que $p(x) \mid q_{i}(x)$ para algún $i \in \{i,\dots,n \}$, como los únicos divisores de $p_{i}(x)$ son $\pm p_{i}(x)$ y $\pm 1$ y $p(x) \neq \pm 1$, entonces si $p(x) \mid q_{i}(x)$, necesariamente $p(x)=q_{i}(x)$.
+\\
+\\
+\textbf{F. Un método para calcular el gcd}
+\\
+\\
+1.
+\\
+\\
+Sea $d(x)=s(x)a(x)+r$
+\\
+\\
+\textbf{G. Una Transformación de F[x]}
+\\
+\\
+1. Sean $a(x)=\sum_{i=0}^{n}a_{i}x^{i}$ y $b(x)=\sum_{j=0}^{m}b_{j}x^{j}$. Luego:
+\begin{equation*}
+\begin{aligned}
+    h(a(x))h(b(x)) &= h\left(a(x) = \sum_{i=0}^{n}a_{i}x^{i}\right) 
+    h\left(\sum_{j=0}^{m}b_{j}x^{j}\right) \\
+    &= \left( \sum_{i=0}^{n}a_{n-i}x^{i}\right) 
+    \left( \sum_{j=0}^{m} b_{m-j}x^{j}\right). \\
+    &= \sum_{k=0}^{n+m} \left( \sum_{i+j=k} a_{n-i}b_{m-j}\right)x^{k} \\
+    & =h \left( \sum_{k=0}^{n+m} \left( \sum_{i+j=k}a_{i}b_{j} \right)x^{k}\right) \\
+    &=h(a(x)b(x))
+\end{aligned}
+\end{equation*}
+2. 
+\\
+Inyectividad: Sea $p(x) \in \ker h$, es decir $h(p(x))=0$ donde $h\left( \sum_{i=0}^{n} a_{i}x^{i} \right)= \sum_{i=0}^{n} a_{n-i}x^{i} = 0$ si y solo si $a_{n-i}=0$ (equiv a $a_{i}=0$ en orden), es decir $p(x) \equiv 0$
+\\
+\\
+Sobreyectividad: Para $p(x)=\sum_{i=0}^{n}a_{n-i}x^{i}$ siempre se puede encontrar $q(x)=\sum_{i=0}^{n} a_{i}x^{i}$, donde $h(q(x))=p(x)$
+\\
+\\
+Sea $p(x)=\sum_{i=0}^{n}a_{i}x^{i}$. Luego:
+\begin{equation*} 
+ h(p(x))=\sum_{i=0}^{n} a_{n-i}x^{i}
+\end{equation*}
+Luego
+\begin{equation*}
+    h(h(p(x)))=h\left( \sum_{i=0}^{n} a_{n-i}x^{i} \right) = \sum_{i=0}^{n}a_{i}x^{i} = p(x)
+\end{equation*}
+3. Sea \( a(x) = a_0 + a_1x + \cdots + a_nx^n \) irreducible, pero \( b(x) = a_n + a_{n-1}x + \cdots + a_0x^n \) reducible, de modo que:
+\[
+b(x) = c(x)d(x).
+\]
+
+Entonces:
+\[
+a(x) = h[b(x)] = h[c(x)d(x)] = h[c(x)]h[d(x)].
+\]
+
+Esto implica que \( a(x) \) es, de hecho, reducible, contradiciendo la hipótesis inicial. Por lo tanto, el supuesto de que \( b(x) \) es reducible lleva a una contradicción.
+\\
+\\
+4. Sea $a_{0}+a_{1}x+\dots+a_{n}x^{n}=(b_{0}+\dots+b_{m}x^{m})(c_{0}+\dots+c_{q}x^{q})$. Se tiene bajo el mapeo que $h(a_{0}+a_{1}x+\dots+a_{n}x^{n})=h(b_{0}+\dots+b_{m}x^{m})h(c_{0}+\dots+c_{q}x^{q})$. Entonces,
+\begin{equation*}
+    a_{n}+a_{n-1}x+\dots+a_{0}x^{n}=(b_{m}+\dots+b_{0}x^{m})(c_{q}+\dots+c_{0}x^{q})
+\end{equation*}
+\\
+\\
+Sea $a(c)=0$, entonces \begin{equation*}
+\begin{aligned}
+    &a_{0} + a_{1}c + a_{2}c^{2} + \dots + a_{n}c^{n} = 0 \quad / \quad \frac{1}{c^{n}} \\
+    &\frac{a_{0}}{c^{n}} + \frac{a_{1}}{c^{n-1}} + \dots + a_{n} = 0
+\end{aligned}
+\end{equation*}
+La implicancia contraria se obtiene ponderando por $c^{n}$ la ecuación.
+\end{document}

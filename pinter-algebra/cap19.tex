@@ -1,0 +1,199 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage[margin=2cm]{geometry}
+\begin{document}
+\title{\textbf{Capítulo 19 - Anillos Cocientes}}
+\date{}
+\maketitle
+\textbf{D. Aplicaciones Elementales del Teorema Fundamental del Homomorfismo.}
+\\
+\\
+En cada ejercicio sea $A$ un anillo conmutativo. Si $a \in A$ y $n$ un entero positivo, la notación $na$ denota:
+\begin{equation*}
+    a+a+\dots+a \quad (n \text{ términos})
+\end{equation*}
+1. Sea $x,y \in A$,
+\begin{equation*}
+\begin{aligned}
+    &a) \quad h(x+y)=(x+y)^2 = x^2 +2xy +y^2 = x^2+y^2 \\
+    \\
+    &b) \quad h(x+y)=(x+y)^2=x^2+y^2=h(x)+h(y) \\
+    & \quad \quad h(xy)=(xy)^{2}=x^2 y^2 = h(x)h(y) \\
+    \\
+    &c) \quad \text{Sea $x \in A$ y $y \in A$: } (xy)^2 = x^2 y^2 = 0y^2 =0 \Longrightarrow xy \in J \\
+    &\quad \text{ } \text{ Sea $x,y \in B$: } (x+y)^2 = x^2+y^2 \text{ ; }(xy)^2 = x^2 y^2 \\
+    &\quad \text{ } \ker{h}=\{x \in A \mid h(x)=0 \} = J \\
+    &\quad \text{ }\text{ Para $x^2 \in B$ se puede definir siempre $x \in A$ tal que $h(x)=x^2$, entonces: } A/J \cong B
+\end{aligned}
+\end{equation*}
+2. Sea $x,y \in A$
+\begin{equation*}
+\begin{aligned}
+    &a) \quad h(x+y)=3(x+y)=3x+3y=h(x)+h(y) \text{ ; } h(xy)=3xy = 3xy + 6xy = 9xy = h(x)(y) \\
+    &b) \text{Sea $x \in J$ y $y \in A$: } 3xy = 3 \cdot 0 \cdot y =0 \\
+    &c) \text{Sea $x,y \in B$: } 3x+3y=3(x+y) \text{ ; } 3x \cdot 3y=9xy =3xy + 6xy= 3xy 
+\end{aligned}
+\end{equation*}
+3.
+\begin{equation*}
+\begin{aligned}
+    &a) \quad \text{Sea $x,y \in A$: } \pi_a(x+y)=a(x+y)=ax+ay= \pi_a(x)+ \pi_b(x) \text{ ; } \pi_{a}(xy)=a(xy)=a^2 xy = \pi_a(x) \pi_a(y) \\
+    &b) \quad \ker{\pi_a}= \{ x \in A\ \mid ax =0 \} = I_a = \{x \in A \mid ax=0 \} \\
+    &c) \quad \pi_a(n)=an = a+a+\dots+a \text{ (n veces) } \in (a) \Longrightarrow A/I_0 \cong (a)
+\end{aligned}
+\end{equation*}
+4. 
+\begin{equation*}
+\begin{aligned}
+    &a) \quad \phi(a+b)=\pi_{a+b}=\pi_a + \pi_b = \phi(a) + \phi(b) \text{ ; } \phi(ab) = \pi_{ab} = \pi_a \cdot \pi(b) = \phi(a) \phi(b) \\
+    &b) I_a = \{a \in A \mid ax = 0 \} \text{ ; } \ker{\phi}=\{a \in A \mid \phi(a)=\pi_a = 0 \} \Longleftrightarrow a = 0 \\
+    &c) A/I \cong \bar{A}
+\end{aligned}
+\end{equation*}
+\\
+\\
+\textbf{E. Propiedades de Anillos Cocientes $A/J$ en Relación de Propiedades de $J$.}
+\\
+\\
+1) Si cada elemento de $A/J$ posee una raíz cuadrada, entonces $x+J=(y+J)^2=y^2+J$, es decir $x-y^2 \in J$. La implicancia contraria se da leyendo la demostración del revés.
+\\
+\\
+2) Si todo elemento de $A/J$ es su propio negativo, entonces $x+J=-x+J$m o equivalentemente, $x+x+J=J \Longleftrightarrow x+x \in J$. La implicancia contraria se da leyendo la demostración del revés.
+\\
+\\
+3) Si $A/J$ es anillo booleano, para todo $x+J \in A/J$: $(x+J)^2=x^2+J=x+J \Longleftrightarrow x^2 -x \in J$. La implicancia contraria se da leyendo la demostración del revés.
+\\
+\\
+4) Se tiene que $J=\{x \in A \mid x^n =0, n \in \mathbb{N} \}$. Usando el homomorfismo vemos que $\varphi(x^n)=\varphi(0)=x^n+J=J$, entonces $x^n \in J$, por lo que existe un entero $m$ tal que $(x^n)^m=x^{nm}=0$, pero esto quiere decir que a la vez $x \in J$ ($nm \in \mathbb{N}$), es decir $x+J=0+J$.
+\\
+\\
+5) Supongamos que todo elemento de $A/J$ es nilpotente, sea entonces $x+J \in A/J$, tal que $x^n +J =J$, entonces $x^n \in J$. (leer del reves)
+\\
+\\
+6) Sea $y+J \in A/J$ elemento unidad, entonces existe para todo $x+J$, se cumple: $xy+J=x+J$ y $yx+J=x+J$, esto es equivalente a decir $xy-x \in J$ y $yx-x \in J$.
+\\
+\\
+\textbf{F. Ideales Primos y Maximales}
+\\
+\\
+Sea $A$ un anillo conmutativo con unidad, $J$ ideal de $A$. Demostrar:
+\\
+\\
+1. $A/J$ es un anillo conmutativo con unidad
+\\
+\\
+Como $A$ es conmutativo, se cumple que $ab=ba$ para todo $a,b \in A$, o equivalentemente que $ab-ba=0$, usando el homomorfismo $\varphi: A \to A/J$, vemos que $\varphi(ab-ba)=\varphi(0)=ab-ba+J=J+0$, esto es equivalente a decir $J+ab=J+ba$: $(J+a)(J+b)=(J+b)(J+b)$. Directamente usando el mapeo se ve que $\varphi(1)=1+J$, comprobar que es neutro trivial.
+\\
+\\
+2. $J$ es ideal primo si y solo si $A/J$ es dominio entero (integral).
+\\
+\\
+$\Longrightarrow)$ Si $J$ es primo, quiere decir que para $ab \in J$ entonces, $a \in J$ o $b \in J$, esto se puede traducir a que o, $J+a=J$ ó $J+b=0$, entonces $(J+ab=)J=(J+a)(J+b)$ solo si uno de los factores es nulo.
+\\
+\\
+$\Longleftarrow$ Si $A/J$ dominio entero, la multiplicación $(J+a)(J+b)=J$, implica que $a+J=J$ ó $b+J=J$. Esto es la definición de ideal primo, solo falta traducirla: $ab \in J$, entonces $a \in J$ o $b \in J$.
+\\
+\\
+3. Cada ideal maximal es un ideal primo.
+\\
+\\
+Por ejercicio anterior, si $J$ es maximal, $A/J$ es un campo, los campos son dominios enteros en particular, y entonces $J$ es primo.
+\\
+\\
+4. Si $A/J$ es un campo, entonces $J$ es un ideal maximal.
+\\
+\\
+Si $A/J$ es un campo, para todo $J+a$, existe $J+b$ tal que $(J+a)(J+b)=J+1$ o sea, $J+ab=J+1 \Longleftrightarrow ab-1 \in J$, supongamos que existe un ideal intermedio $J \subset I \subset A$. Si $a \in I-J$, entonces podemos encontrar $y \notin J$ tal que $xy-1 \in J \subset I$. Pero como $xy$ está en $I$, sigue que $1=-(xy-1)+xy \in I$, O equivalentemente que $I=A$.
+\\
+\\
+\textbf{G. Más Propiedades de Anillos Cocientes en Relación a Sus Ideales}
+\\
+\\
+Sea $A$ un anillo y $J$ un ideal de $A$.
+\\
+\\
+1)
+\\
+$\Longrightarrow)$ Sea $A/J$ un campo y $a \in A$ pero $a \notin J$, en el anillo todo elemento es invertible, por lo que para $J+a$ existe $J+b$ tal que $(J+a)(J+b)=J+1$, es decir $J+ab=J+1$, lo que es equivalente a decir que $ab-1 \in J$
+\\
+\\
+$\Longleftarrow$) Si hay $a \in A$ tal que $a \notin J$ y $b$ tal que $ab-1 \in J$, directamente podemos ver que $A/J$ es un campo, pues $ab-1 in J \Longleftrightarrow J+ab=J+1 \Longleftrightarrow (J+a)(J+b)=J+1$
+\\
+\\
+2)
+\\
+$\Longrightarrow)$ Primero supongamos que el elemento $J+a \in A/J$ es invertible, hay $J+b \in A/J$ tal que $(J+a)(J+b)=(J+ab)=J+1$ si y solo si $ab-1 \in J$. Supongamos ahora que es divisor de cero, entonces hay $J+b$ coset no trivial donde $(J+a)(J+b)=J+ab=J \Longleftrightarrow ab \in J$.
+\\
+\\
+$\Longleftarrow$) Si $ax \in J$, tal que $a \notin J$ y $x \notin J$, si $J+ax = J \Longleftrightarrow (J+a)(J+x)=J$. Luego, si $ax-1 \in J \Longleftrightarrow J+ax = J+1 \Longleftrightarrow (J+a)(J+x)=J+1$.
+\\
+\\
+3)
+\\
+$\Longrightarrow$) Sea $J$ semiprimo
+\\
+\\
+\textbf{H. $\textbf{Z}_n$ Como Imagen Homomorfa de $\mathbb{Z}$}
+\\
+\\
+1) Supongamos que hay números $x.y$ satisfaciendo la ecuación $x^2 + 7y^2 = 24$. Al mapear la ecuación a $\mathbb{Z}_7$ obtenemos: $\bar{x}^{2}=\bar{3}$, pero no hay ninguna clase de equiv en $\mathbb{Z}_7$ que satisfaga la ecuación. Entonces, la ecuación original no posee solución.
+\\
+\\
+2)
+\begin{equation*}
+\begin{aligned}
+    &x^{2}+(x+1)^2+(x+2)^2 = y^2 \\
+    &3x^2 + 6x + 5 = y^{2}
+\end{aligned}
+\end{equation*}
+Se puede reducir la ecuación a módulo $3$, obteniendo $\bar{y}^{2}=\bar{2}$, pero no hay $\bar{y} \in \mathbb{Z}_3$ tal que su cuadrado sea $\bar{2}$
+\\
+\\
+3) Para ver el último dígito reducimos módulo $10$, entonces llevamos la ecuación $x^2 +10y^2 = n$ a $\bar{x}^{2}=\bar{n}$. Por computación directa, tenemos que los cuadrados en $\mathbb{Z}_{10}$ son:
+\begin{equation*}
+    0^{2}=0 \quad 1^{2}=1 \quad 2^{2}=4 \quad 3^{2}=9 \quad 4^{2}=6 \quad 5^{2}=5 \quad 6^{2}=6 \quad 7^{2}=9 \quad 8^{2}=4 \quad 9^{2}=1
+\end{equation*}
+ninguno termina en $2,3,7$ u $8$.
+\\
+\\
+4) Para ver que en la sucesión $3, 8 , 13, 18,23, \dots$ no hay ningún cuadrado, vemos la forma general de la sucesión: $3+5n$ y la igualamos a un cuadrado $3+5n=x^{2}$. Teniendo esta ecuación, la podemos reducir módulo $5$: $\bar{x}^{2}=\bar{3}$, pero esta ecuación no posee solución.
+\\
+\\
+5) Para ver que la sucesión $2,10,15,26, \dots$ no posee un cubo hacemos lo mismo que el ejercicio anterior: $2+8n=x^3$, reduciendo módulo $8$ se obtiene: $\bar{x}^{3}=\bar{2}$. Por computación directa, esta ecuación no posee solución:
+\begin{equation*}
+    0^3 = 0 \quad 1^3 = 1 \quad 2^3 = 0 \quad 3^3 = 3 \quad 4^3 = 0 \quad 5^3 = 5 \quad 6^3 = 0 \quad 7^3 = 7
+\end{equation*}
+No hay solución.
+\\
+\\
+6) Para ver que la secuencia $3,11,19,27,\dots$ no posee un entero suma de dos cuadrados vemos la ecuación $3+8d=x^2 + y^2$, reduciendo módulo $8$ se obtiene que: $\bar{3}=\bar{x}^{2} + \bar{y}^{2}$. Por ejercicio anterior, podemos ver que la suma de los cuadrados módulo $8$ nunca da $\bar{3}$.
+\\
+\\
+7)
+$n=x(x+1) \Longrightarrow \bar{n}=\bar{x}^{2}+\bar{x} \pmod{\mathbb{Z}_{10}}$
+\begin{equation*}
+\begin{aligned}
+    0^2+0=0 \quad 1^2+1=2 \quad 3^2+3=2 \quad 4^2+4=0 \quad 5^2+5=0 \quad 6^2+6=2 \quad 7^2+7=6 \quad 8^2+8 = 2 \quad 9^2+9=0
+\end{aligned}
+\end{equation*}
+8)
+$n=x(x+1)(x+2)=x(x^2 + 3x +2)=x^3+3x^2+2x$, luego, reduciendo la ecuación módulo $10$ se obtiene: $\bar{n}=\bar{x}^{3} + \bar{3} \bar{x}^{2} + \bar{2}\bar{x}$. Por computación directa:
+\begin{equation*}
+\begin{aligned}
+    0^3 + 3(0)^2 + 2(0) &= 0 \quad \Rightarrow 0 \pmod{10} = 0 \\
+    1^3 + 3(1)^2 + 2(1) &= 6 \quad \Rightarrow 6 \pmod{10} = 6 \\
+    2^3 + 3(2)^2 + 2(2) &= 24 \quad \Rightarrow 24 \pmod{10} = 4 \\
+    3^3 + 3(3)^2 + 2(3) &= 60 \quad \Rightarrow 60 \pmod{10} = 0 \\
+    4^3 + 3(4)^2 + 2(4) &= 120 \quad \Rightarrow 120 \pmod{10} = 0 \\
+    5^3 + 3(5)^2 + 2(5) &= 210 \quad \Rightarrow 210 \pmod{10} = 0 \\
+    6^3 + 3(6)^2 + 2(6) &= 336 \quad \Rightarrow 336 \pmod{10} = 6 \\
+    7^3 + 3(7)^2 + 2(7) &= 504 \quad \Rightarrow 504 \pmod{10} = 4 \\
+    8^3 + 3(8)^2 + 2(8) &= 720 \quad \Rightarrow 720 \pmod{10} = 0 \\
+    9^3 + 3(9)^2 + 2(9) &= 990 \quad \Rightarrow 990 \pmod{10} = 0
+\end{aligned}
+\end{equation*}
+\end{document}
