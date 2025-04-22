@@ -11,12 +11,15 @@
 \newcommand{\R}{\mathbb{R}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 
 \newcommand{\br}[1]{\left( #1 \right)}
 
 \begin{document}
-\title{Curve Book - William Fulton}
+\title{\textbf{Curve Book - William Fulton}}
+\date{}
+\maketitle
 \section*{Capítulo 1 - Conjuntos Algebraicos Afines}
 \subsection*{1.1 Preliminarios Algebraicos}
 \textbf{Definiciones y Teoremas:}
@@ -34,19 +37,19 @@
 \textit{Definición(es) 4:} Para un anillo $R$, $R[X]$ denota el anillo de polinomios en $R$. El \textit{grado} de un polinomio no nulo $\sum a_i X^{i}$ es el entero más grande $d$ que acompaña al \textit{término principal}. Un polinomio es \textit{mónico} si el término principal es $1$.
 \\
 \\
-(*) El anillo de polinomios en $n$ variables sobre $R$ se denota $R[X_1, \dots , X_n]$
+$(*)$ El anillo de polinomios en $n$ variables sobre $R$ se denota $R[X_1, \dots , X_n]$
 \\
 \\
 \textit{Definición 5:} Denominamos a un polinomio $F$ \textit{homogeneo} o una $\textit{forma}$ de grado $d$, si todos los coeficientes $a_i$ son nulos excepto para los monomios de grado $d$. (Todos los monomios poseen grado $d$).
 \\
 \\
-(*) Todo polinomio $F$ se puede expresar como $F=F_{0}+F_1 + \dots +F_d$, donde $F_i$ es la \textit{forma} de grado $i$. Si $F_d \neq 0$, $\deg{F}=d$.
+$(*)$ Todo polinomio $F$ se puede expresar como $F=F_{0}+F_1 + \dots +F_d$, donde $F_i$ es la \textit{forma} de grado $i$. Si $F_d \neq 0$, $\deg{F}=d$.
 \\
 \\
-\textit{Definición 6:} El anillo $R[X_1 , \dots, X_n]$ es canonicamente isomorfo a $R[X_1 , \dots , X_{n-1}][X_n]$
+\textit{Definición 6:} El anillo $R[X_1 , \dots, X_n]$ es canónicamente isomorfo a $R[X_1 , \dots , X_{n-1}][X_n]$
 \\
 \\
-\textit{Definición 7:} Un elemento $a \in R$ se dice irreducible si no es una unidad o el cero, y para cualquier factorización $a=bc$, $b,c \in R$, entonces $b$ o $c$ es una unidad. (Recordar que irreducible implica primo, pero no al revés!).
+\textit{Definición 7:} Un elemento $a \in R$ se dice irreducible si no es una unidad o el cero, y para cualquier factorización $a=bc$, $b,c \in R$, entonces $b$ o $c$ es una unidad. (¡Recordar que irreducible implica primo, pero no al revés!).
 \\
 \\
 \textit{Definición 8:} Un dominio es un $\textit{Dominio de Factorización Única}$ (DFU/UDF) si cada elemento en $R$ puede ser factorizado de forma única. Ver directamente que $R[X]$ es un UDF para $R$ UFD (parte del lema de Gauss).
@@ -65,16 +68,10 @@
 \\
 \\
 \textit{Definición 12:} Sea $R$ anillo, $a \in R$, $F \in R[X]$, $a$ es una raíz de $F$, entonces $F=(X-a)G$ para un único $G \in R[X]$. Un campo $k$ es $\textit{algebraicamente cerrado}$ si para cualquier polinomio no constante $F \in k[X]$ posee una raíz en $k$
-\\
-\\
-\\
-\\
-\\
-\\
-\\
+\subsubsection*{Ejercicios}
 1.1
 \\
-(a) Sean $F=\sum_{i=0}^{n}a_i f_i(X_1,\dots,X_n)$ y $G=\sum_{j=0}^{m} b_j g_j(X_1, \dots, X_n)$ polinomios homogeneos donde $\deg{f_i}=r$ y $\deg{g_i}=s$ para todo $i,j$. Luego:
+(a) Sean $F=\sum_{i=0}^{n}a_i f_i(X_1,\dots,X_n)$ y $G=\sum_{j=0}^{m} b_j g_j(X_1, \dots, X_n)$ polinomios homogéneos donde $\deg{f_i}=r$ y $\deg{g_i}=s$ para todo $i,j$. Luego:
 \begin{equation*}
     F \cdot G = \sum_{k=0}^{n+m} \left( \sum_{i+j=k}a_i b_i\right) (f_i g_j)(X_1, \dots, X_n)
 \end{equation*}
@@ -89,18 +86,14 @@ b) Suponer que $F=F_1 \cdot F_2$ (donde $F_i$ ($i=1,2$) no es trivial al ser $R$
 \\
 1.3
 \\
-Como $R$ es un PID, todo ideal está generado por un elemento, entonces $P=(p)$, como es primo, $ab \in (P)$, entonces $a \in (P)$ o $b \in (p)$, esto es equivalente a que $p \mid ab$, entonces $p \mid a$ o $p \mid b$. Para ver que es irreducible, hay que ver si $p=xy$, entonces $x$ o $y$ es una unidad de $R$, supongamos que $x \in (p)$ (recordar la definición de ideal primo!)
+a) Como $R$ es DIP, todo ideal está generado por solo un elemento, entonces $P=\langle p \rangle$, como este ideal es primo, si $ab \in P$, entonces $a \in P$ o $b \in P$, para ver que $p$ es irreducible hay que ver que si $p=xy$, entonces $x$ o $y$ es unidad. Luego sea $p=xy$, entonces $xy \in P$, entonces $x \in P$ o $y \in P$, suponer que $x \in P$, luego $x=kp$ para $k \in R$, luego:
 \begin{equation*}
-\begin{aligned}
-    &\Longrightarrow x=k \cdot p \\
-    &\Longrightarrow p = kpy \\
-    &\longrightarrow 1=ky
-\end{aligned}
+    p=xy=kpy
 \end{equation*}
-Entonces $y$ es unidad.
+Entonces $ky=1$, es decir $y$ es unidad.
 \\
 \\
-b) Para probar que $I$ es maximal, vamos a aprovechar que $R$ es un pid, suponer que hay $I$ tal que $P \subset I \subset R$, entonces $I=(q)$, entonces $(p) \subset (q)$ si y solo si $p=kq$, Pero entonces $k$ o $q$ es unidad, si $k$ es unidad, entonces $q=k^{-1}p$ y 
+b) Para probar que $P=\langle p \rangle$ es maximal vamos a argumentar por contradicción. Supongamos que hay $Q=\langle q \rangle$ tal que $P \subset Q \subset R$, como $p \in Q$, entonces $p=sq$ para $s \in R$, pero $p$ es irreducible, si $s$ es unidad, entonces $P=Q$, si $q$ es unidad, $Q=R$, luego $P=\langle p \rangle$ es maximal.
 \\
 \\
 1.4
@@ -116,7 +109,7 @@ Sea $k=n$. Entonces, $F=\sum F_i(a_1,\dots,a_{n-1})a_{n}^{i}=0$, como $F_i=0$ pa
 \\
 1.5
 \\
-Suponer que hay finitos polinomios mónicos irreducibles $F_1,\dots,F_n$, Sea $F=F_1 \dots F_n +1$, entonces $F$ es mónico irreducible o un producto de irreducibles, en el primer caso obtenemos una contradicción de lo que hemos supuesto, asi que consideramos el segundo caso
+La demostración es equivalente a la de los números primos. Suponer que hay finitos polinomios mónicos irreducibles, sea estos listados $F_1,\dots,F_n$. Se define $G=F_1 \cdots F_n +1$. Luego $G$ es irreducible o producto de irreducibles (mónicos). En el primer caso estamos listos son la contradicción, sino, uno de ellos divide $G$, $F_i \mid G$, pero entonces $F_i \mid (G-F_1 \cdots F_n)$, pero entonces $F_i \mid 1$, una contradicción, entonces $F_i$ no estaba en la lista. 
 \\
 \\
 1.6
@@ -125,8 +118,26 @@ Si $k$ es un campo finito con elementos $a_1,\dots,a_n$, el polinomio $f(X)=1+\p
 \\
 \\
 1.7
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{1.2 Espacio Afín y Conjuntos Algebraicos}
+\\
+a) Como $k[X_1]$ es dominio euclidiano, podemos de forma repetida dividir por $(X_1 -a_1)$ y escribir $F=\sum_{i=0}^{\deg{F}} \lambda_{(i)} (X_1 -a_1)^{i}$ con $\lambda_{(i)} \in k$.
+\\
+\\
+Ahora suponer que el enunciado se cumple para $k[X_1,\dots,X_{n-1}]$. Luego para $F \in k[X_1, \dots, X_n]$ se tiene que: $F=\sum_{i}G_i(X_i-a_i)^i$, donde $G_i \in k[X_1, \dots,X_{n-1}]$, aplicando la hipótesis inductiva a cada $G_i$ obtenemos el resultado deseado:
+\begin{equation*}
+    F = \sum_{i} \lambda_i (X_1 -a_1)^{i_1} \dots (X_n -a_n)^{i_n} \quad ; \quad \lambda_i \in k
+\end{equation*}
+En donde $G_i = \sum_{j=0}^{\deg{G_i}} \mu_j (X_n -a_n)^{j}$ $\mu_j \in k$
+\\
+\\
+b) Como $F(a_1, \dots, a_n)=0$, el término constante es nulo, esto se puede ver de la expresión anterior:
+\begin{equation*}
+    F=\sum_{i} \lambda_i (X_1-a_1)^{i_1} \cdots (X_n -a_n)^{i_n} \quad ; \quad \lambda_i \in k
+\end{equation*}
+Luego por cada sumando $i$ se puede agrupar el resto de monomios junto a la constante excepto un factor $(X_i - a_i)$ para obtener $G_i$, luego:
+\begin{equation*}
+    F=\sum (X_i-a_i)G_i
+\end{equation*}
+\subsection*{1.2 Espacio Afín y Conjuntos Algebraicos}
 \textbf{Definiciones y Teoremas:}
 \\
 \\
@@ -136,7 +147,7 @@ Si $k$ es un campo finito con elementos $a_1,\dots,a_n$, el polinomio $f(X)=1+\p
 \textit{Definición 2:} Para $F \in k[X_1 , \dots, X_n]$ un punto $P \in \A{n}(k)$ se denomina un \textit{cero} de $F$ si $F(P)=F(a_1 , \dots , a_n)=0$. Si $F$ no es constante, el conjunto de ceros de $F$ se denomina \textit{hipersuperficie} definida por $F$ y denotada por $V(F)$.
 \\
 \\
-(*) Generalmente, si $S$ es  un conjunto de polinomios en $k[X_1 , \dots , X_n]$, definimos $V(S)= \{P \in \A^{n}(k) \mid F(P)=0 \quad \forall F \in S$: $V(S)= \cap_{F \in S} V(F)$. Si $S= \{F_1, \dots, F_r \}$ escribimos $V(F_1 , \dots, F_r)$
+$(*)$ Generalmente, si $S$ es  un conjunto de polinomios en $k[X_1 , \dots , X_n]$, definimos $V(S)= \{P \in \A^{n}(k) \mid F(P)=0 \quad \forall F \in S$: $V(S)= \cap_{F \in S} V(F)$. Si $S= \{F_1, \dots, F_r \}$ escribimos $V(F_1 , \dots, F_r)$
 \\
 \\
 \textit{Propiedades:} Se cumplen las siguientes propiedades:
@@ -150,9 +161,8 @@ Si $k$ es un campo finito con elementos $a_1,\dots,a_n$, el polinomio $f(X)=1+\p
 \\
 (4) $V(FG)=V(F) \cup V(G)$ para polinomios $F,G$ cualquiera; $V(I) \cup V(J)=V( \{FG \mid F \in I, G \in J \})$; por lo que cualquier unión finita de conjuntos algebraicos es un conjunto algebraico.
 \\
-(5) $V(0)=\A^{n}(k)$; $V(1)=\emptyset$; $V(X_1 - a_1, \ots, X_n -a_n)=\{a_1, \dots,a_n \}$ para todo $a_i \in k$. Entonces, cualquier subconjunto finito de $\A^{n}(k)$ es un conjunto algebraico.
-\\
-\\
+(5) $V(0)=\A^{n}(k)$; $V(1)=\emptyset$; $V(X_1 - a_1, \dots, X_n -a_n)=\{a_1, \dots,a_n \}$ para todo $a_i \in k$. Entonces, cualquier subconjunto finito de $\A^{n}(k)$ es un conjunto algebraico.
+\subsubsection*{Ejercicios:}
 1.8
 \\
 Sea $\mathbb{A}^{1}(k)$, entonces estamos en $k[X_1]$, por lo que estamos en un PID. Sea el ideal $(F)$.
@@ -234,7 +244,7 @@ polinomios que les faltan algunas variables y que esto permite que aún sigan an
 \begin{equation*}
     V \times W = F(F' \cdot G')
 \end{equation*}
-\section*{1.3 El Ideal de un Conjunto de Puntos}
+\subsection*{1.3 El Ideal de un Conjunto de Puntos}
 \textbf{Definiciones y Teoremas:}
 \\
 \\
@@ -265,7 +275,7 @@ Se tiene que $\operatorname{Rad}{(I)}$ es un ideal conteniendo $I$. Un ideal $I$
 \\
 \\
 \textit{Propiedad 3:} $I(X)$ es ideal radical para cualquier $X \in \A^{n}(k)$.
-\subsection*{Ejercicios:}
+\subsubsection*{Ejercicios:}
 1.16
 \\
 $\Longrightarrow)$ Supongamos que $V=W$. Luego, sease $f \in I(V)$, entonces para $p \in V$, $f(p)=0$, pero $p \in W$ también, por lo que $f \in I(W)$. La igualdad se obtiene argumentando del mismo modo para $I(W)$.
@@ -357,7 +367,7 @@ La imagen está dada por $k$. Ya que para todo $a \in k$ puedo definir el polino
 \\
 \\
 (b) Para ver que el mapeo es isomorfismo solo basta ver que es la inversa de $\varphi$. O también ver que el kernel solo puede ser el $(0)$ y que para toda clase de equivalencia $a + I$ puedo definir $a \in k$.
-\section*{1.4 Teorema de la base de Hilbert}
+\subsection*{1.4 Teorema de la base de Hilbert}
 \subsection*{Teoremas y Definiciones:}
 \textit{Teorema 1:} Cada conjunto algebraico es la intersección de un número finito de hiper superficies.
 \\
@@ -365,5 +375,245 @@ La imagen está dada por $k$. Ya que para todo $a \in k$ puedo definir el polino
 \textit{Teorema 2 (Teorema de la base de Hilbert):} Si $R$ es un anillo noetheriano, entonces $R[X_1, \dots, X_n]$ es noetheriano.
 \\
 \\
-\textit{Corolrio 3:} $k[X_1, \dots, X_n]$ es noetheriano para todo campo $k$.
+\textit{Corolario 3:} $k[X_1, \dots, X_n]$ es noetheriano para todo campo $k$.
+\subsubsection*{Ejercicio:}
+1.22 Sea $I$ un ideal en un anillo $R$, $\pi: R \to R/I$ el homomorfismo natural. 
+\\
+\\
+(a) Mostrar que cada ideal $J'$ de $R/I$, $\pi^{-1}(J')=J$ es un ideal de $R$ conteniendo $I$ y por cada ideal $J$ de $R$ conteniendo $I$, $\pi(J)=J'$ es un ideal de $R/I$
+\\
+\\
+Sea $I$ un ideal en $R$, se define la función $\pi: \{J \subseteq R \mid I \subseteq J \} \to \{J' \subseteq S/I \}$, tal que $f(S)=S/I$, la función está bien definida.
+\\
+\\
+Sea $a+I$, $b+I \in S/I$ para $a,b \in S$
+\begin{equation*}
+\begin{aligned}
+    &\pi(a+b)=(a+b)+I=(a+I)+(b+I) in S/I \\
+    &\pi(ab)=ab+I = (a+I)(b+I) \in S/I
+\end{aligned}
+\end{equation*}
+Entonces $S/I$ es subanillo de $R/I$.
+\\
+\\
+La función es inyectiva, si $\pi(S_1) = \pi(S_2) \Longleftrightarrow a + I = b + I \Longleftrightarrow a - b + I = I \Longleftrightarrow a = b$ para $a \in S_1$ y $b \in S_2$. La función es sobreyectiva ya que siempre se puede definir para $a + I$, con $a$ tal que $\pi(a) = a + I$.
+\\
+\\
+(b) Mostrar que $J'$ es ideal radical si y solo si $J$ es radical. Similarmente para ideales primos y maximales.
+\\
+\\
+1b) $\Longrightarrow$) Si $J'$ es radical, entonces para todo $x+I \in R/I$, $(x+I)^n \in J'$ por lo que $x+I \in J'$, entonces $\pi^{-1}(x^n +I)=x^n \in J$, por lo que $\pi^{-1}(x+I) \in J$.
+\\
+\\
+$\Longleftarrow$) Si $J$ es radical, entonces $x^n \in J$, entonces $x \in J$, entonces $\pi(x^n)=x^n +I \in J'$, por lo que $x 
+I \in J'$
+\\
+\\
+2b) $\Longrightarrow$) Si $J'$ es ideal primo, entonces para $ab+I \in J'$ entonces $a+I \in J'$ o $b+I \in J'$, es decir $\pi^{-1}(ab+I)=ab \in J$, entonces $a \in J$ o $b \in J$. La otra implicancia se obtiene a través del mapa inverso.
+\\
+\\
+3b) Si $J'$ es maximal, $K'=J'$ o $K'=R/I$. Si $K'=R/I$, entonces $K$ contiene elementos no en $J$, entonces $K=R$. Conversamente, si $K'=J'$, entonces $K \subseteq K$, entonces $K=J$. Entonces $J$ es maximal. La implicancia contraria se prueba de forma similar.
+\\
+\\
+(c) Mostrar que si $J'$ es finitamente generado si $J$ lo es. Concluir que $R/I$ es noetheriano si $R$ es noetheriano. Cualquier anillo de la forma $k[X_1. \dots, X_n]/I$ es noetheriano.
+\\
+\\
+Si \( J \) es un ideal finitamente generado en \( R \), entonces podemos escribir 
+\[
+J = \langle x_1, x_2, \dots, x_n \rangle
+\]
+para algunos \( x_1, x_2, \dots, x_n \in R \).
+\\
+\\
+Como \( \pi \) es un homomorfismo, tenemos
+\[
+\pi(J) = \pi(\langle x_1, x_2, \dots, x_n \rangle) = \langle \pi(x_1), \pi(x_2), \dots, \pi(x_n) \rangle.
+\]
+Por lo tanto, \( J_0 = \pi(J) \) es finitamente generado en \( R/I \).
+\\
+\\
+Por el contrario, si \( J_0 \) es finitamente generado en \( R/I \), entonces
+\[
+J_0 = \langle x_1 + I, x_2 + I, \dots, x_n + I \rangle,
+\]
+y la preimagen \( J = \pi^{-1}(J_0) \) está generada por \( x_1, x_2, \dots, x_n \), por lo que \( J \) es finitamente generado en \( R \).
+\\
+\\
+Así, \( J_0 \) es finitamente generado si y solo si \( J \) es finitamente generado.
+\\
+\\
+Si \( R \) es Noetheriano, entonces todo ideal de \( R \) es finitamente generado. Como \( J_0 = \pi(J) \) es finitamente generado si \( J \) lo es, se sigue que \( R/I \) también es Noetheriano.
+\\
+\\
+Cualquier anillo de la forma \( k[X_1, X_2, \dots, X_n]/I \) es Noetheriano porque el anillo de polinomios \( k[X_1, X_2, \dots, X_n] \) es Noetheriano, y \( I \) es un ideal en ese anillo.
+\\
+\\
+Así, concluimos que \( R/I \) es Noetheriano si \( R \) es Noetheriano, y cualquier anillo de la forma \( k[X_1, X_2, \dots, X_n]/I \) es Noetheriano.
+\subsection*{1.5 Componentes Irreducibles de un Conjunto Algebraico}
+\subsection*{Teoremas y Definiciones}
+\textit{Proposición 1:} Un conjunto algebraico $V$ es irreducible si y solo si $I(V)$ es primo
+\\
+\\
+\textit{Lema 2:} Sea \textsc{T} cualquier colección no vacía de ideales en un anillo noetheriano $R$. Entonces \textsc{T} posee un elemento maximal, es decir, hay un ideal $I \in T$ que no está contenido en cualquier otro ideal de \textsc{T}.
+\\
+\\
+(*) Sigue inmediatamente que cualquier colección de conjuntos algebraicos en $\A^{n}(k)$ posee un elemento minimal. Si $\{V_{\alpha} \}$ es una colección, tomar el elemento maximal $I(V_{\alpha_{0}})$ de $\{I(V_{\alpha}) \}$. Entonces $V_{\alpha_{0}}$ es un elemento minimal de la colección.
+\\
+\\
+\textit{Teorema 3:} Sea $V$ un conjunto algebraico en $\A^{n}(k)$. Entonces hay conjuntos algebraicos irreducibles únicos $V_1, \dots, V_m$ tales que $V=V_1 \cup \dots \cup V_m$ y $V_i \not\subset V_j$ para todo $i \neq j$.
+\\
+\\
+(*) Los $V_i$ se denominan los componentes irreducibles de $V$; $V=V_1 \cup \dots \cup V_m$ es la descomposición de $V$ en componentes irreducibles.
+\subsubsection*{Ejercicios:}
+1.25 
+\\
+(a) Para ver esto, definimos el mapa:
+\begin{equation*}
+\begin{aligned}
+    \varphi: &\C[X,Y] \to \C[X] \\
+    &x \mapsto x \\
+    &y \mapsto x^2
+\end{aligned}
+\end{equation*}
+Vemos que el kernel de este mapa corresponde a $(Y-X^2)$. Si $f \in \ker{\varphi}$, entonces se cumple que $f(x,x^2)=0$ si y solo si el polinomio $Y-X^2$ divide a $f$, entonces $f \in (Y-X^2)$. Luego, directamente $Y-X^2 \in \ker{\varphi}$ (verlo evaluando directamente). Entonces $\C[X,Y]/(Y-X^2) \cong \C[X]$, en donde $\C[X]$ es dominio (entero). Por lo que $(Y-X^2)$ es ideal primo.
+\\
+\\
+(b) Ver que estamos trabajando en $\C$. Factorizaremos los polinomios uno a uno:
+\begin{itemize}
+    \item $Y^4-X^2=(Y^2+X)(Y^2-X)$ 
+    \item $Y^4-X^2 Y^2 + XY^2 -X^3 = Y^2 (Y^2 - X^2)+ X(Y^2 -X^2)= (Y^2+X)(Y^2-X^2)=(Y^2+X)(Y+X)(Y-X)$
+\end{itemize}
+Entonces $V(Y^4 -X^2, Y^4 -X^2 Y^2 + X Y^2 - X^3)=V((Y^2-X)(Y^2 +X), (Y^2 
+    +X)(Y+X)(Y-X)) = V(Y^2 + X) \cup V( (Y^2-X)(Y+X)(Y-X))$
+\\
+\\
+Ahora hay que estudiar $V( (Y^2-X)(Y+X)(Y-X)) = V(Y^2-X) \cap V(Y+X) \cap (Y-X)$. Para eso vemos las soluciones simultáneas de:
+\begin{equation*}
+    Y^2 -X = Y^2 -X^2
+\end{equation*}
+Es decir $X=0$ o $X=1$. Para $X=0$ se obtiene que $Y=0$ y para $X=1$, también $Y=0$.
+\\
+\\
+Entonces $V( (Y^2-X)(Y+X)(Y-X))=V(X,Y) \cup V(X-1,Y)$
+\\
+\\
+Luego, $V(Y^4 -X^2, Y^4 -X^2 Y^2 + X Y^2 - X^3)=V(Y^2+X) \cup V(X,Y) \cup V(X-1,Y)$. (El primer ideal es primo, se puede ver haciendo el mismo tipo de mapa que en (a)).
+\\
+\\
+1.26
+\\
+Estamos en característica $0$. Supongamos que $Y^2+X^2(X-1)^2 \in \R[X.Y]$ es reducible, entonces $F=(a(X)Y+b(X))(c(X)Y+d(X))=(a(X)c(X)Y^2 + (a(x)d(X)+b(x)c(X))Y+ b(x)d(X)$.
+\\
+\\
+Entonces $a(X)c(X)=1$, por lo que son polinomios constantes y además inversos. Del coeficiente $(a(x)d(X)+b(x)c(X))$ vemos que $d(X)=b(X)=0$ necesariamente, pero entonces $b(X)d(X)=0$, pero esto no es posible, porque debe darnos $X^2(1-X)^2$, por lo que es una contradicción.
+\\
+\\
+Para ver cómo se comporta $V(F)$ hay que solucionar la ecuación $Y^2 + X^2(X-1)^2$, se tiene que $Y^2=-X^2(X-1)^2$, luego $Y^2 \geq 0$ y $X^2(1-X^2) \geq 0$, entonces las únicas soluciones pueden ser cuando $Y=0$, entonces:
+\begin{equation*}
+    0=X^2(1-X)^2
+\end{equation*}
+Es decir $X=0$ o $X=1$, estas son las únicas soluciones, entonces:
+\begin{equation*}
+    V(F)=V(X,Y) \cup V(X-1,Y)
+\end{equation*}
+1.27
+\\
+\\
+1.28
+\\
+Esto es un aplicación directa del teorema $3$, sea $V=V_1 \cup \dots \cup V_r$, como $V_i \not\subset V_j$ para todo $i \neq j$, directamente $V_i \not\subset \bigcup_{i \neq j} V_j$.
+\\
+\\
+1.29
+\\
+\textit{Respuesta corta}: Por definición $\A^n(k)=V(0)$ y $(0)$ es ideal primo, entonces el conjunto es irreducible.
+\\
+\\
+\textit{Respuesta larga}: Vimos antes en el ejercicio 1.4 que si $F(a_1, \dots , a_n)=0$ para todo $a_1, \dots , a_n \in k$m entonces $F=0$, entonces si partimos sin saber el polinomio $F$ que describe $\A^{n}(k)$, pero sabemos que este se anula en todos los puntos del conjunto, entonces necesariamente debe ser el polinomio nulo; la conclusión es la misma a la anterior.
+\subsection*{1.6 Subconjuntos Algebraicos del Plano}    
+\subsubsection*{Teoremas y Definiciones:}
+\textit{Proposición 1:} Si $F$ y $G$ son polinomios en $k[X,Y]$ sin factores comunes. Entonces $V(F,G)=V(F) \cap V(G)$ es un conjunto finito de puntos.
+\\
+\\
+\textit{Corolario 2:} Si $F$ es un polinomio irreducible en $k[X,Y]$ tal que $V(F)$ es infinito, entonces $I(V(F))=(F)$ y $V(F)$ es irreducible.
+\\
+\\
+\textit{Corolario 3:} Suponer que $k$ es infinito. Entonces, los subconjuntos algebraicos irreducibles de $\A^{2}(k)$ son $\A^{2}(k), \emptyset$, puntos y curvas planas irreducibles $V(F)$, donde $F$ es un polinomio irreducible y $V(F)$ es infinito.
+\\
+\\
+\textit{Corolario 4:} Asumir que $k$ es algebraicamente cerrado, $F$ un polinomio no constante en $k[X,Y]$, sea $F=F_{1}^{n_1} \dots F_{r}^{n_{r}}$ la descomposición de $F$ en factores irreducibles. Entonces $V(F)=V(F_1) \cup \dots \cup V(F_r)$ es la descomposición de $V(F)$ en componentes irreducibles y $I(V(F))=(F_1 \dots F_r)$
+\\
+\\
+1.30
+\\
+Sea $k=\R$. (a) Mostrar que $I(V(X^2+Y^2+1))=(1)$. (b) Mostrar que todo subconjunto algebraico de $\A^2(\R)$ equivale a $V(F)$ para algún $F \in \R[x,y]$.
+\\
+\\
+a) Se tiene que $V(X^2+Y^2+1)=\emptyset$, debido a que $\R$ no es un conjunto algebraicamente cerrado y del hecho que $X^2+Y^2 \geq 0$. Luego $I(\emptyset)=\R[x,y]=(1)$
+\\
+b)
+\\
+\\
+\\
+1.31
+\\
+(a) Encontrar las componentes irreducibles de $V(Y^2-XY-X^2Y+X^3)$ en $\A^{2}(\R)$.
+\\
+\\
+Por teorema, las componentes irreducibles son generadas por los factores irreducibles del polinomio; luego, hay que buscar una factorización:
+\begin{equation*}
+    Y^2-XY-X^2Y+X^3=Y(Y-X)-X^2(Y-X)=(Y-X^2)(Y-X)
+\end{equation*}
+Directamente $(Y-X)$ es irreducible en $\R[x,y]$, para ver que el polinomio $Y-X^2$ es irreducible. Esto se puede ver a partir de Eisenstein en el anillo $\R[y,x]=\R[y][x]$  y viendo que el elemento $y$ es irreducible en el anillo.
+\\
+\\
+Luego $V=V(Y-X)\cup V(Y-X^2)$. Notar que los polinomios son irreducibles también en $\C[x,y]$ por los mismos argumentos.
+\\
+\\
+(b) Hacer lo mismo para $V(Y^2-X(X^2-1))$ y $V(X^3+X-X^2Y-Y)$.
+\\
+\\
+Directamente $Y^2-X(X^2-1)$ es irreducible ya que $X(X^2-1)$ no corresponde al cuadrado de ningún polinomio, así que $V=V(X^2-X(X^2-1))$. Luego:
+\begin{equation*}
+    X^3+X-X^2Y-Y=X^2(X-Y)+(X-Y)=(X^2+1)(X-Y).
+\end{equation*}
+Luego en $\R[x,y]$ ambos factores son irreducibles, (notar que $X^2+1$) no tiene soluciones en el anillo. Luego si el anillo es $\C[x,y]$, entonces los factores irreducibles son $(X-1),(X+1),X-Y$. Entonces $V_{\C}=V(X+1)\cup V(X-1) \cup V(X-Y)$.
+\subsection*{1.7 Teorema De Los Ceros de Hilbert}
+1.32
+\\
+Mostrar que ambos teoremas y todos los corolarios son falsos si $k$ no es algebraicamente cerrado
+\\
+\\
+1.33
+\\
+(a) Descomponer $V(X^2+Y^2-1,X^2-Z^2-1) \subset \A^{3}(\C)$ en componentes irreducibles. (b) Sea $V=\{(t,t^2,t^3) \in \A^{3}(\C) \mid t \in \C \}$. Encontrar $I(V)$ y mostrar que $V$ es irreducible.
+\\
+\\
+(a) Por definición $V(X^2+Y^2-1,X^2-Z^2-1)=V(X^2+Y^2-1) \cap V(X^2-Z^2-1)$, entonces buscamos $V(f_1,\dots,f_n)=V(X^2+Y^2-1) \cap V(X^2-Z^2-1)$, estos $f_i$ deben describir la intersección, luego:
+\begin{equation*}
+    X^2+Y^2-1=X^2-Z^2-1 \Longleftrightarrow Y^2=-Z^2 \Longleftrightarrow Y=\pm iZ
+\end{equation*}
+Luego esta identidad la podemos reemplazar en la primera ecuación y obtener:
+\\
+\\
+$X^2+(\pm i Z)^2-1=X^2-Z^2-1$, es decir:
+\begin{equation*}
+    V(X^2+Y^2-1,X^2-Z^2-1)=V(Y^2+Z^2,X^2-Z^2-1)=V(Y+iZ,X^2-Z^2-1) \cup V(Y-iZ, X^2-Z^2-1)
+\end{equation*}
+Eisenstein nos dice que $X^2-Z^2-1$ es irreducible, hay que ver que $-Z^2+X^2-1=-Z^2+(X+1)(X-1)$. Luego $Y \pm iZ$ es irreducible ya que es un factor lineal.
+\\
+\\ 
+(b) Sea $V=\{(t,t^2,t^3) \in \A^3(\C) \mid t \in \C \}$.
+\\
+\\
+Se tiene que $V=V(Y-X^2,Z-X^3)$, es decir $I(V)=(Y-X^2,Z-X^3)$, es fácil ver que los conjuntos algebraicos son equivalentes:
+\begin{equation*}
+    Y-X^2=t^2-t^2=0 \quad \text{y} \quad Z-X^3=t^3-t^3=0
+\end{equation*}
+Es solo un argumento directo por contenciones. Luego, para ver que $V$ es irreducible, solo hay que ver que los polinomios que generan el ideal son irreducibles, esto lo podemos argumentar directamente por Eisenstein:
+\\
+\\
+a) $Y-X^2$ es irreducible por Eisenstein en $k[Y][X]$ usando el irreducible $Y$ en $k[Y]$
+\\
+b) $Z-X^3$ es irreducible por Eisenstein en $k[Z][X]$ usando el irreducible $Z$ en $k[Z]$.
 \end{document}

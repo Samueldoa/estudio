@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\usepackage[margin=2cm]{geometry}
+
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\br}[1]{\left( #1 \right)}
+
+\begin{document}
+\section*{Capítulo 2 - Variedades Afines}
+Definiciones preliminares: A partir de ahora $k$ es un campo algebraicamente cerrado. Los conjuntos algebraicos afines estarán en $\A^n := \A^{n}(k)$ para $n \in \mathbb{N}$. Un conjunto algebraico irreducible se dice una \texit{variedad afín}.
+\subsection*{2.1 Anillos Coordenados}
+Sea $V \subset \A^n$ una variedad no vacía. Entonces $I(V)$ un ideal primo en $k[X_1,\dots,X_n]$, entonces $K[X_1, \dots, X_n]/I(V)$ es un dominio entero.
+\\
+\\
+\textit{Definición 1}: Definimos $\Gamma(V):=k[X_1, \dots, X_n]/I(V)$ y lo denominamos el $\textit{anillo coordenado}$ de $V$.
+\\
+\\
+\textit{Definición 2}: Para cualquier conjunto $V$, definimos $\mathcal{F}(V,k)$ como el conjunto de todas las funciones de $V$ hacia $k$. A este conjunto se le puede dotar de estructura de anillos de la forma trivial y se puede identificar $k$ como un subanillo de $\mathcal{F}(V,k)$ (funciones constantes).
+\\
+\\
+\textit{Definición 3}: Si $V \subset \A^{n}$ es una variedad, una función $f \in \mathcal{F}(V,k)$ se denomina $\textit{función polinomial}$ si hay un polinomio $F \in k[X_1,\dots,X_n]$ tal que $f(a_1,\dots,a_n)=F(a_1,\dots,a_n)$ para todo $(a_1,\dots,a_n) \in V$.
+\\
+\\
+Dos polinomios $F,G$ determinan la misma función syss $(F-G)(a_1,\dots,a_n)=0$ para todo $(a_1,\dots,a_n) \in V$, es decir $F-G \in I(V)$. Entonces podemos identificar $\Gamma(V)$ como el subanillo de $\mathcal{F}(V,k)$ consistiendo de todas las funciones polinomiales en $V$.
+\subsubsection*{Ejercicios:}
+2.1
+\\
+Mostrar que el mapeo que asocia a cada $F \in k[X_1,\dots,X_n]$ una función polinomial en $\mathcal{F}(V,k)$ es un homomorfismo de anillos con kernel $I(V)$.
+\\
+\\
+Sean $F,G \in k[X_1,\dots,X_n]$ tal que $\varphi(F)=f, \quad \varphi(G)=g$. Luego:
+\begin{equation*}
+\begin{aligned}
+    \varphi(F)+\varphi(G)&=f+g=\varphi(F+G) \\
+    \varphi(F)\varphi(G)&=f\cdot g=fg=\varphi(FG)
+\end{aligned}
+\end{equation*}
+2.2
+\\
+El Nullstellensatz da una correspondencia biyectiva entre ideales radicales y variedades. A la vez, el teorema de la correspondencia nos da una relación biyectiva entre los siguientes conjuntos: $\{\text{ideales de } R/I \} \longleftrightarrow \{\text{ideales de } R \text{ que contienen I} \}$.
+\\
+\\
+Luego ver que $V$ es descrito por $I(V)$, entonces si $W \subset V$ syss $I(V) \subset I(W)$, luego juntando los dos diccionarios anteriores puedo describir toda subvariedad a través de la relación biyectiva:
+\begin{equation*}
+    \{J\mid I(V) \subset J, \text{ } J \text{ radical} \} \longleftrightarrow \{W\mid W \subset V, W \text{ variedad} \}
+\end{equation*}
+2.3
+\\
+Sea $W$ una subvariedad de $V$, sea $I_v(W)$ el ideal de $\Gamma(V)$ correspondiente a $W$. (a) Mostrar que cada función polinomial en $V$ se restringe a una función polinomial en $W$. (b) Mostrar que el mapa desde $\Gamma(V) \to \Gamma(W)$ en (a) es un homomorfismo sobreyectivo de kernel $I_v(W)$, entonces $\Gamma(W)$ es isomorfo a $\Gamma(V)/I_V(W)$.
+\\
+\\
+Sea $f \in \mathcal{F}(V,k)$ una función polinomial tal que $f:V\to k$, como $W \subset V$, entonces se puede definir $g: W \to k$ tal que $g=f|_{W}$. Esta es la restricción pedida.
+\\
+\\
+Sea $i: \Gamma(V) \to \Gamma(W)$ el mapeo de incrustación.
+\\
+\\
+(i) Homomorfismo: Sean $f,g \in \Gamma(V)$
+\begin{equation*}
+\begin{aligned}
+    i(f)+i(g)&=f|_W + g|W=(f+g)|_W=i(f+g) \\
+    i(f)i(g)&=f|_W g|_W=fg|_W=i(fg)
+\end{aligned}
+\end{equation*}
+(ii) Sobreyectividad: Ver que para todo $g \in \Gamma(W)$ se puede definir un $f \in \Gamma(V)$ tal que $g=f|_W$, donde $W \subset V$.
+\\
+\\
+(iii) Para computar el kernel notar que $\operatorname{ker}(i)=\{ f \in \Gamma(V) \mid i(f)=0\}$, es decir, los $f$ tal que $i(f) \in I(W)$, o equivalentemente $f(a_1,\dots,a_n)=0$ para todo $P \in W$
+\\
+\\
+2.4
+\\
+Sea $V \subset \A^n$ una variedad no vacía. Mostrar que los siguientes son equivalentes: (i) $V$ es un punto; (ii) $\Gamma(V)=k$; (iii) $\operatorname{dim}_{k}\Gamma(V) < \infty$.
+\\
+\\
+$(i) \Longrightarrow (ii)$ Si $V$ es un punto, entonces es descrito por un ideal maximal, es decir $I(V)=(x_1-a_1,\dots,x_n-a_n)$. Luego $\Gamma(V)=k[X_1,\dots,X_n]/I(V)=k$.
+\\
+\\
+$(ii) \Longrightarrow (iii)$ Si $\Gamma(V)=k$, entonces $\operatorname{dim}_{k}\Gamma(V)=\operatorname{dim}_{k}k=1<\infty$
+\\
+\\
+$(iii)\Longrightarrow(i)$ Si $\operatorname{dim}_{k}\Gamma(V) < \infty$, como $V$ es no vacío, existe un punto $P=(a_1,\dots,a_n) \in V$. Ahora considerar el homomorfismo $\varphi: k[X_1,\dots,X_n]\to k$ definido por $\varphi:(f)=f(P)$, para un polinomio $f$. Luego, dado $\varphi$, tenemos el siguiente homomorfismo inducido: $\tilde{\varphi}: \Gamma(V)\to k$ con $\tilde{\varphi}(f+I(V))=\varphi(f)=f(P)$.
+\\
+\\
+Ahora, $\tilde{\varphi}$ es un homomorfismo de $k$-álgebras sobreyectivo. Como $\operatorname{dim}_{k}\Gamma(V)$ es finito, el kernel de $\tilde{\varphi}$ debe ser trivial, es decir $\tilde{\varphi}$ es inyectivo también, por lo que $\Gamma(V)$ es isomorfo a $k$. Por lo que el kernel es un ideal maximal y a consecuencia describe un punto.
+\\
+\\
+2.5
+\subsection*{2.2 Mapeos Polinomiales}
+Sean $V \subset \A^n, \quad W \subset \A^m$ variedades.
+\\
+\\
+\textit{Definición 1}: Un mapeo $\varphi  : V \to W$ se denomina un $\textit{mapeo polinomial}$ si hay polinomios $T_1, \dots, T_m \in k[X_1, \dots, X_n]$ tal que $\varphi(a_1, \dots, a_n)=(T_1(a_1,\dots,a_n),\dots,T_m(a_1,\dots,a_n))$ para todo $(a_1,\dots,a_n) \in V$.
+\\
+\\
+\textit{Definción 2}: Cualquier mapeo $\varphi:V \to W$ induce un homomorfismo $\tilde{\varphi}: \mathcal{F}(W,k) \to \mathcal{F}(V,k)$ al definir $\tilde{\varphi}=f \circ \varphi$. Si $\varphi$ es un mapeo polinomial, entonces $\tilde{\varphi}(\Gamma(W)) \to \Gamma(V)$, entonces $\tilde{\varphi}$ se restringe a un homomorfismo desde $\Gamma(W)$ hacia $\Gamma(V)$.
+\\
+\\
+\textit{Proposición 1}: Sean $V \subset \A^n, \quad W \subset \A^m$ variedades afines. Hay una correspondencia biyectiva entre mapeos polinomiales $\varphi:V \to W$ y homomorfismos $\tilde{\varphi}:\Gamma(W) \to \Gamma(V)$. 
+\\
+\\
+\textit{Definición 3}: Un mapeo polinomial $\varphi:V \to W$ es un \textit{isomorfismo} si hay un mapeo polinomial $\psi: W \to V$ tal que $\psi \circ \varphi=Id_{V}$, $\varphi \circ \psi =Id_W$. La proposición 1 muestra que dos variedades afines son isomorfas syss sus anillos coordenados son isomorfos (sobre $k$).
+\subsubsection*{Ejercicios:}
+2.6
+\\
+Sean $\varphi:V \to W$, $\psi: W \to Z$. Mostrar que $\tilde{\psi \circ \varphi}=\tilde{\varphi} \circ \tilde{psi}$. Mostrar que la composición de mapas polinomiales es un mapa polinomial.
+\\
+\\
+Sea $\psi \circ \varphi:V \to Z$, entonces $\tilde{\psi \circ \varphi}:\mathcal{F}(Z,k) \to F(V,k)$, esto es equivalente a tomar $\varphi: \mathcal{F}(W,k)$ y $\tilde{\psi}: \mathcal{F}(Z,k) \to \mathcal{F}(W,k)$ y componer: $\tilde{\varphi} \circ \tilde{\psi}: \mathcal{F}(Z,k) \to \mathcal{F}(V,k)$.
+\\
+\\
+Sean $\varphi$ y $\psi$ mapas polinomiales tal que $\varphi(a_1,\dots,a_n)=(F_1(a_1,\dots,a_n),\dots,F_m(a_1,\dots,a_n))$ y $\psi(a_1,\dots,a_m)=(G_1(a_1,\dots,a_m),\dots,G_k(a_1,\dots,a_m))$. Luego
+\begin{equation*}
+\begin{aligned}
+    \psi \circ \varphi(a_1,\dots,a_n)=\psi(F_1(a_1,\dots,a_n),\dots,F_m(a_1,\dots,a_n))=(G_1 \circ F_1(a_1,\dots,a_n),\dots,G_k \circ F_m(a_1,\dots,a_n))
+\end{aligned}
+\end{equation*}
+2.7
+\\
+\\
+2.8
+\\
+(a) Mostrar que $\{(t,t^2,t^3) \in \A^3(k) \mid t \in k \}$ es una variedad afín. (b) Mostrar que $V(XZ-Y^2,YZ-X^3,Z^2-X^2Y) \subset \A^3(\C)$ es una variedad.
+\\
+\\
+(a) Vimos anteriormente que el conjunto es equivalente al lugar de ceros descrito por $V(I)$, donde $I=(X^2-Y,X^3-Z)$. Para ver que es variedad afín hay que ver si los polinomios que conforman el ideal son irreducibles:
+\begin{equation*}
+\begin{aligned}
+    &X^2-Y \text{ es irreducible por Eisenstein usando $Y$ como irreducible en } k[Y][X] \\
+    &X^3-Z \text{ es irreducible por Eisenstein usando $Z$ como irreducible en } k[Z][X]
+\end{aligned}
+\end{equation*}
+(b) Mostrar que $V(XZ-Y^2,YZ-X^3,Z^2-X^2Y) \subset \A^3(\C)$ es una variedad.
+\begin{equation*}
+\begin{aligned}
+    &XZ-Y^2 \text{ es irreducible por Eisenstein usando $X$ como irreducible en } \C[X][Y,Z] \\
+    &YZ-X^3 \text{ Eisenstein con Z en } \C[Z][X,Y] \\
+    &Z^2-X^2Y \text{ Eisenstein con Y en } \C[Y][X,Z]
+\end{aligned}
+\end{equation*}
+\\
+\\
+2.10
+\\
+Mostrar que el mapeo de proyección $\pi:A^n \to A^r$, $n \geq r$ definido como $\pi(a_1,\dots, a_n)=(a_1,\dots,a_n)$ es un mapa polinomial.
+\\
+\\
+Esto es directo, tomar $T_i(a_{1},\dots,a_n)=a_i$, o equivalentemente $T_i=x_i$ ($1 \leq i \leq r$)como los polinomios que se evalúan en cada coordenada:
+\begin{equation*}
+    \pi(a_1,\dots,a_n)=(T_1(a_1,\dots,a_n),\dots,T_r(a_1,\dots,a_n))=(a_1,\dots,a_r)
+\end{equation*}
+2.11
+\\
+Sea $f \in \Gamma(V)$, $V$ una variedad $\subset \A^n$. Definir:
+\begin{equation*}
+    G(f):=\{(a_1,\dots,a_n,a_{n+1}) \in \A^{n+1} \mid (a_1,\dots,a_n) \in V \quad \text{ y } \quad a_{n+1}=f(a_1,\dots,a_n)\}
+\end{equation*}
+como el gráfico de $f$. Mostrar que $G(f)$ es una variedad afín y que el mapa $(a_1,\dots,a_n) \mapsto (a_1,\dots,a_n,f(a_1,\dots,a_n))$ define un isomorfismo de $V$ con $G(f)$. (la proyección da la inversa)
+\end{document}
